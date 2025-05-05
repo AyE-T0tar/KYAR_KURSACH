@@ -1,0 +1,309 @@
+@charset "UTF-8";
+/* Основные переменные */
+/* Базовые стили для body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Предотвращаем горизонтальную прокрутку */
+  box-sizing: border-box;
+  min-height: 100vh; /* Полная высота окна */
+  display: flex;
+  flex-direction: column;
+}
+body *, body *::before, body *::after {
+  box-sizing: inherit;
+}
+
+/* Хедер */
+.overlay-header {
+  position: fixed;
+  top: 0; /* Добавлено для фиксации вверху */
+  left: 0;
+  right: 0;
+  padding: 15px 40px; /* Уменьшен padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  background-color: #007BFF;
+  z-index: 1000; /* Добавлено для перекрытия контента */
+  margin: 0; /* Убираем возможные отступы */
+  width: 100%; /* На всю ширину */
+}
+.overlay-header .logo {
+  height: 55px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-width: 100%;
+  transition: transform 0.3s;
+}
+.overlay-header .logo:hover {
+  transform: scale(1.05);
+}
+.overlay-header nav {
+  font-family: "Abhaya Libre", serif;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+.overlay-header nav a {
+  font-family: inherit;
+  color: #ffffff;
+  font-size: 22px;
+  text-decoration: none;
+  font-weight: bold;
+  white-space: nowrap;
+  padding: 5px 0;
+}
+.overlay-header nav a:hover {
+  text-decoration: underline;
+}
+.overlay-header nav .book-now-btn {
+  font-family: inherit;
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 22px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  line-height: 1;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+.overlay-header nav .book-now-btn:hover {
+  background-color: #e6e6e6;
+}
+
+/* Основное содержимое */
+.booking-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+  flex: 1 0 auto; /* Позволяет контейнеру растягиваться */
+  padding-top: 80px; /* Учитываем высоту хедера (15px padding + 55px logo + 15px padding) */
+}
+
+.flight-summary, .passenger-info, .additional-services {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.flight-summary h2, .passenger-info h2, .additional-services h2 {
+  color: #007BFF;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.flight-details {
+  padding: 15px;
+  background: #f5f9ff;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+.flight-details h3 {
+  margin: 0 0 10px;
+  color: #033394;
+}
+.flight-details p {
+  margin: 5px 0;
+  color: #666666;
+}
+.flight-details p#flight-date, .flight-details p#return-flight-date {
+  font-weight: bold;
+  color: #033394;
+}
+
+.return-flight {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px dashed #ddd;
+}
+
+/* Форма данных пассажира */
+#passenger-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 0;
+}
+.form-row .form-group {
+  flex: 1;
+  min-width: 0;
+}
+.form-row .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+.form-row .form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Дополнительные услуги */
+.services-list {
+  margin-bottom: 25px;
+}
+.services-list .service-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 8px 0;
+}
+.services-list .service-item input {
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+.services-list .service-item label {
+  flex-grow: 1;
+}
+
+.price-summary {
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+}
+.price-summary p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+.price-summary p.total-price {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+/* Кнопка оплаты */
+.payment-btn {
+  display: block;
+  width: 100%;
+  background-color: #007BFF;
+  color: #ffffff;
+  border: none;
+  padding: 15px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  margin-top: 20px;
+}
+.payment-btn:hover {
+  background-color: #0062cc;
+}
+
+/* Футер */
+footer {
+  text-align: center;
+  font-size: 22px;
+  padding: 20px;
+  background: #007BFF;
+  color: #ffffff;
+  width: 100%; /* Растягиваем на всю ширину */
+  margin: 0; /* Убираем возможные отступы */
+  flex-shrink: 0; /* Предотвращаем сжатие */
+  position: relative; /* Фиксируем внизу */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Адаптивность */
+@media (max-width: 376px) {
+  /* Общие стили хедера */
+  .overlay-header {
+    padding: 15px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+  }
+  .overlay-header .logo {
+    height: 40px;
+    margin-bottom: 15px;
+  }
+  .overlay-header .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+    z-index: 1001;
+  }
+  .overlay-header .menu-toggle.collapsed {
+    transform: rotate(180deg);
+  }
+  .overlay-header nav {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+  }
+  .overlay-header nav.expanded {
+    display: flex;
+  }
+  .overlay-header nav a {
+    font-size: 18px;
+    padding: 5px 0;
+    text-align: left;
+    white-space: nowrap;
+  }
+  .overlay-header nav .book-now-btn {
+    font-size: 18px;
+    padding: 10px 15px;
+    margin-top: 10px;
+    align-self: center;
+  }
+  .booking-container {
+    padding-top: 70px;
+  }
+  .booking-container .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .booking-container .flight-summary,
+  .booking-container .passenger-info,
+  .booking-container .additional-services {
+    padding: 20px 15px;
+  }
+  /* Общие отступы контента */
+  .container {
+    padding: 0 15px;
+  }
+  /* Общие стили футера */
+  footer {
+    font-size: 16px;
+    padding: 15px;
+  }
+}/*# sourceMappingURL=buybilet.css.map */
