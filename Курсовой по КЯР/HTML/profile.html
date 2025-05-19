@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - SkyWay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/profile.css">
+</head>
+<body>
+    <header class="overlay-header">
+        <a href="../HTML/Main.html">
+            <img src="../1.svg" alt="SkyWay Логотип" class="logo">
+        </a>
+        <button class="menu-toggle">
+            <span class="arrow-icon">▼</span>
+        </button>
+        <nav>
+            <a href="../HTML/profile.html">Личный кабинет</a> 
+            <a href="../HTML/services.html">Услуги</a> 
+            <a href="../HTML/about.html">О компании</a> 
+            <button onclick="location.href='../HTML/booking.html'" class="book-now-btn">Забронировать сейчас</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="account-section">
+            <h1>Личный кабинет SkyWay</h1>
+            
+            <div class="auth-form">
+                <h2>Регистрация</h2>
+                
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Адрес электронной почты</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" id="password" name="password" required>
+                        <div class="password-hints" id="password-hints">
+                            <ul>
+                                <li id="length-hint">Не менее 5 символов</li>
+                                <li id="number-hint">Содержит цифры</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">Зарегистрироваться</button>
+                        <button type="button" id="switch-to-login" class="switch-btn">Уже есть аккаунт? Войти</button>
+                    </div>
+                </form>
+                
+                <form id="login-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="login-email">Адрес электронной почты</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="login-password">Пароль</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">Войти</button>
+                        <button type="button" id="switch-to-register" class="switch-btn">Зарегистрироваться</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Контакты: <a href="mailto:info@skyway.com">info@skyway.com</a> | +375 (29) 123-45-67 | Минск, ул. Аэропортовская, 15</p>
+    </footer>
+
+    <script src="../JS/account.js"></script>
+    <script src="../JS/mobile.js"></script>
+</body>
+</html>

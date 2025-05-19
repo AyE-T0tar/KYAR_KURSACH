@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - SkyWay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/account.css">
+</head>
+<body>
+    <!-- Хедер -->
+    <header class="overlay-header">
+        <a href="../HTML/Main.html">
+            <img src="../1.svg" alt="SkyWay Логотип" class="logo">
+        </a>
+        <button class="menu-toggle">▼</button>
+        <nav>
+            <a href="../HTML/profile.html">Личный кабинет</a> <a href="../HTML/services.html">Услуги</a> <a href="../HTML/about.html">О компании</a> 
+            <button onclick="location.href='../HTML/booking.html'" class="book-now-btn">Забронировать сейчас</button>
+        </nav>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main class="account-container">
+        <section class="account-sidebar">
+            <div class="user-profile">
+                <h2 class="user-name">Иван Иванов</h2>
+                <p class="user-email">ivan@example.com</p>
+            </div>
+            
+            <nav class="account-menu">
+                <a href="#profile" class="active">Мой профиль</a>
+                <a href="#settings">Настройки</a>
+                <button class="logout-btn">Выйти</button>
+            </nav>
+        </section>
+
+        <section class="account-content">
+            <div class="account-section active" id="profile">
+                <h1>Мой профиль</h1>
+                <form class="profile-form">
+                    <div class="form-group">
+                        <label for="full-name">ФИО</label>
+                        <input type="text" id="full-name" value="Иван Иванов">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" value="ivan@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" value="+375 29 123-45-67">
+                    </div>
+                    <div class="form-group">
+                        <label for="passport">Паспортные данные</label>
+                        <input type="text" id="passport" value="MP1234567">
+                    </div>
+                    <button type="submit" class="save-btn">Сохранить изменения</button>
+                </form>
+            </div>
+
+
+            <div class="account-section" id="settings">
+                <h1>Настройки</h1>
+                <form class="settings-form">
+                    <div class="form-group">
+                        <label for="password">Новый пароль</label>
+                        <input type="password" id="password" placeholder="Введите новый пароль">
+                        <div class="password-hints">
+                            <ul>
+                                <li id="length-hint">Не менее 5 символов</li>
+                                <li id="number-hint">Содержит цифры</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button type="submit" class="save-btn">Сохранить настройки</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <p>Контакты: <a href="mailto:info@skyway.com">info@skyway.com</a> | +375 (29) 123-45-67 | Минск, ул. Аэропортовская, 15</p>
+    </footer>
+
+    <script src="../JS/account2.js"></script>
+    <script src="../JS/mobile.js"></script>
+</body>
+</html>
