@@ -1,0 +1,23 @@
+<popularFlights>
+    <flight>
+        <route>Минск → Санкт-Петербург</route>
+        <time>10:50 → 14:20</time>
+        <plane>Boeing 737</plane>
+        <departure>2025-12-06</departure>
+        <price>120</price>
+    </flight>
+    <flight>
+        <route>Рим → Лондон</route>
+        <time>13:45 → 16:30</time>
+        <plane>Airbus A320</plane>
+        <departure>2025-04-30</departure>
+        <price>130</price>
+    </flight>
+    <flight>
+        <route>Берлин → Будапешт</route>
+        <time>06:30 → 09:00</time>
+        <plane>Boeing 737</plane>
+        <departure>2025-05-05</departure>
+        <price>110</price>
+    </flight>
+</popularFlights>

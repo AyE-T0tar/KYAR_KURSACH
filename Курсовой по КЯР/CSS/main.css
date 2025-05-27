@@ -1,0 +1,388 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f9ff;
+  color: #333;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+body *, body *::before, body *::after {
+  box-sizing: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.overlay-header {
+  position: fixed;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  background-color: #007BFF;
+  z-index: 1000;
+}
+.overlay-header .logo {
+  height: 55px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-width: 100%;
+  transition: transform 0.3s;
+}
+.overlay-header .logo:hover {
+  transform: scale(1.05);
+}
+.overlay-header nav {
+  font-family: "Abhaya Libre", serif;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+.overlay-header nav a {
+  font-family: inherit;
+  color: #ffffff;
+  font-size: 22px;
+  text-decoration: none;
+  font-weight: bold;
+  white-space: nowrap;
+  padding: 5px 0;
+}
+.overlay-header nav a:hover {
+  text-decoration: underline;
+}
+.overlay-header nav .book-now-btn {
+  font-family: inherit;
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 22px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  line-height: 1;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+.overlay-header nav .book-now-btn:hover {
+  background-color: #e6e6e6;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hero {
+  position: relative;
+  padding: 180px 0 100px;
+  background: url("../IMG/main.jpg") no-repeat center center/cover;
+}
+.hero .overlay {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero .overlay .search-info {
+  margin-bottom: 40px;
+}
+.hero .overlay .search-info h2 {
+  text-align: center;
+  font-size: 34px;
+  margin: 0 0 15px;
+}
+.hero .overlay .search-info p {
+  font-size: 22px;
+  margin: 0 0 20px;
+}
+.hero .overlay .search-info .about-btn {
+  background-color: #ffffff;
+  color: #007BFF;
+  border: none;
+  border-radius: 80px;
+  padding: 10px 25px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  align-self: center;
+  margin-left: 90px;
+}
+.hero .overlay .search-info .about-btn:hover {
+  background-color: #e6e6e6;
+}
+.hero .overlay .search-form-wrapper {
+  width: 100%;
+  max-width: 500px;
+}
+.hero .overlay .search-form {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.hero .overlay .search-form form {
+  display: flex;
+  flex-direction: column;
+}
+.hero .overlay .search-form form input {
+  margin: 10px 0;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+.hero .overlay .search-form form button {
+  padding: 15px;
+  background-color: #28a745;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+.hero .overlay .search-form form button:hover {
+  background-color: #1e7e34;
+}
+
+.popular-flights {
+  padding: 60px 0;
+  background-color: #ffffff;
+}
+.popular-flights h3 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #007BFF;
+}
+.popular-flights .flights-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.popular-flights .flight-card {
+  background: #666;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+.popular-flights .flight-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+.popular-flights .flight-card.saint-petersburg {
+  background-image: url("../IMG/3.jpg");
+}
+.popular-flights .flight-card.london {
+  background-image: url("../IMG/1.jpg");
+}
+.popular-flights .flight-card.budapest {
+  background-image: url("../IMG/2.jpg");
+}
+.popular-flights .flight-card .flight-info {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+}
+.popular-flights .flight-card .flight-info h4 {
+  font-size: 20px;
+  margin: 0 0 5px;
+  color: #ffffff;
+}
+.popular-flights .flight-card .flight-info .flight-date {
+  font-size: 16px;
+  color: #ddd;
+  margin: 0 0 5px;
+}
+.popular-flights .flight-card .flight-info .flight-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}
+.popular-flights .flight-card .book-btn {
+  position: relative;
+  z-index: 2;
+  background: #FFC107;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+.popular-flights .flight-card .book-btn:hover {
+  background-color: #d39e00;
+}
+
+footer {
+  text-align: center;
+  font-size: 22px;
+  padding: 20px;
+  background: #007BFF;
+  color: #ffffff;
+}
+
+@media (max-width: 769px) {
+  .overlay-header {
+    position: relative;
+    padding: 15px 20px;
+  }
+  .overlay-header .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 24px;
+    color: white;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+    z-index: 1001;
+  }
+  .overlay-header .menu-toggle.collapsed {
+    transform: rotate(180deg);
+  }
+  .overlay-header nav {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+  }
+  .overlay-header nav.expanded {
+    display: flex;
+  }
+  .overlay-header nav a {
+    font-size: 18px;
+    padding: 5px 0;
+    text-align: left;
+  }
+  .overlay-header nav .book-now-btn {
+    font-size: 18px;
+    padding: 10px 15px;
+    margin-top: 10px;
+    align-self: center;
+  }
+  .popular-flights {
+    padding: 40px 0;
+  }
+  .popular-flights .flight-card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+@media (max-width: 376px) {
+  .overlay-header {
+    padding: 15px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+  }
+  .overlay-header .logo {
+    height: 40px;
+    margin-bottom: 15px;
+  }
+  .overlay-header .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 24px;
+    color: white;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+    z-index: 1001;
+  }
+  .overlay-header .menu-toggle.collapsed {
+    transform: rotate(180deg);
+  }
+  .overlay-header nav {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+  }
+  .overlay-header nav.expanded {
+    display: flex;
+  }
+  .overlay-header nav a {
+    font-size: 18px;
+    padding: 5px 0;
+    text-align: left;
+  }
+  .overlay-header nav .book-now-btn {
+    font-size: 18px;
+    padding: 10px 15px;
+    margin-top: 10px;
+    align-self: center;
+  }
+  .hero {
+    padding: 120px 0 60px;
+  }
+  .hero .overlay .search-info h2 {
+    font-size: 24px;
+  }
+  .hero .overlay .search-info p {
+    font-size: 16px;
+  }
+  .hero .overlay .search-info .about-btn {
+    padding: 8px 15px;
+    font-size: 16px;
+  }
+  .hero .overlay .search-form {
+    padding: 15px;
+  }
+  .hero .overlay .search-form form input, .hero .overlay .search-form form button {
+    padding: 12px;
+    font-size: 16px;
+  }
+  .popular-flights {
+    padding: 30px 15px;
+  }
+  .popular-flights h3 {
+    font-size: 22px;
+  }
+  .popular-flights .flight-card {
+    width: 100%;
+    max-width: 300px;
+  }
+  footer {
+    font-size: 16px;
+    padding: 15px;
+  }
+}/*# sourceMappingURL=main.css.map */

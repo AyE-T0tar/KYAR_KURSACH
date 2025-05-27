@@ -1,0 +1,483 @@
+// Глобальные настройки
+$primary-color: #007BFF;
+$secondary-color: #0056B3;
+$text-color: #333;
+$light-bg: #f5f9ff;
+$white: #ffffff;
+$shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin card-style {
+  background: $white;
+  border-radius: 12px;
+  box-shadow: $shadow;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+// Base styles
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: $light-bg;
+  color: $text-color;
+  overflow-x: hidden;
+  box-sizing: border-box;
+
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// Header styles
+.overlay-header {
+  position: fixed;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  background-color: $primary-color;
+  z-index: 1000;
+
+  .logo {
+    height: 55px;
+    object-fit: contain;
+    max-width: 100%;
+    transition: transform 0.3s;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  nav {
+    font-family: 'Abhaya Libre', serif;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+
+    a {
+      font-family: inherit;
+      color: $white;
+      font-size: 22px;
+      text-decoration: none;
+      font-weight: bold;
+      white-space: nowrap;
+      padding: 5px 0;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .book-now-btn {
+      font-family: inherit;
+      background-color: white;
+      color: black;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 22px;
+      font-weight: bold;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      line-height: 1;
+      height: auto;
+      display: flex;
+      align-items: center;
+
+
+      &:hover {
+        background-color: darken($white, 10%);
+      }
+    }
+  }
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+// Hero section
+.hero {
+  position: relative;
+  padding: 180px 0 100px;
+  background: url('../IMG/main.jpg') no-repeat center center/cover;
+
+  .overlay {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .search-info {
+      margin-bottom: 40px;
+
+      h2 {
+        text-align: center;
+        font-size: 34px;
+        margin: 0 0 15px;
+      }
+
+      p {
+        font-size: 22px;
+        margin: 0 0 20px;
+      }
+
+      .about-btn {
+        background-color: $white;
+        color: $primary-color;
+        border: none;
+        border-radius: 80px;
+        padding: 10px 25px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        align-self: center;
+        margin-left: 90px;
+
+        &:hover {
+          background-color: darken($white, 10%);
+        }
+      }
+    }
+
+    .search-form-wrapper {
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .search-form {
+      background: $white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: $shadow;
+
+      form {
+        display: flex;
+        flex-direction: column;
+
+        input {
+          margin: 10px 0;
+          padding: 15px;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          font-size: 16px;
+        }
+
+        button {
+          padding: 15px;
+          background-color: #28a745;
+          color: $white;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+          font-size: 18px;
+          margin-top: 10px;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: darken(#28a745, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Popular flights section
+.popular-flights {
+  padding: 60px 0;
+  background-color: $white;
+
+  h3 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: $primary-color;
+  }
+
+  .flights-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .flight-card {
+    background: #666; // Серый фон как в примере, если изображение не загрузится
+    border-radius: 12px;
+    box-shadow: $shadow;
+    padding: 20px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+
+    // Затемнение для читаемости текста
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3); // Легкое затемнение
+      z-index: 1;
+    }
+
+    // Классы для фоновых изображений
+    &.saint-petersburg {
+      background-image: url("../IMG/3.jpg");
+    }
+
+    &.london {
+      background-image: url("../IMG/1.jpg");
+    }
+
+    &.budapest {
+      background-image: url("../IMG/2.jpg");
+    }
+
+    .flight-info {
+      position: relative;
+      z-index: 2;
+      color: $white; // Белый текст для лучшей читаемости
+
+      h4 {
+        font-size: 20px;
+        margin: 0 0 5px;
+        color: $white;
+      }
+
+      .flight-date {
+        font-size: 16px;
+        color: #ddd;
+        margin: 0 0 5px;
+      }
+
+      .flight-price {
+        font-size: 18px;
+        font-weight: bold;
+        color: $white;
+        margin: 0;
+      }
+    }
+
+    .book-btn {
+      position: relative;
+      z-index: 2;
+      background: #FFC107;
+      color: $white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: darken(#FFC107, 10%);
+      }
+    }
+  }
+}
+
+// Footer
+footer {
+  text-align: center;
+  font-size: 22px;
+  padding: 20px;
+  background: $primary-color;
+  color: $white;
+}
+
+// Responsive styles
+@media (max-width: 769px) {
+  .overlay-header {
+    position: relative;
+    padding: 15px 20px;
+    
+    .menu-toggle {
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      font-size: 24px;
+      color: white;
+      transform: rotate(0deg);
+      transition: transform 0.3s ease;
+      z-index: 1001;
+      
+      &.collapsed {
+        transform: rotate(180deg);
+      }
+    }
+    
+    nav {
+      width: 100%;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      padding-top: 10px;
+      
+      &.expanded {
+        display: flex;
+      }
+      
+      a {
+        font-size: 18px;
+        padding: 5px 0;
+        text-align: left;
+      }
+      
+      .book-now-btn {
+        font-size: 18px;
+        padding: 10px 15px;
+        margin-top: 10px;
+        align-self: center;
+      }
+    }
+  }
+
+
+  .popular-flights {
+    padding: 40px 0;
+
+    .flight-card {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+}
+
+@media (max-width: 376px) {
+  .overlay-header {
+    padding: 15px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    
+    .logo {
+      height: 40px;
+      margin-bottom: 15px;
+    }
+    
+    .menu-toggle {
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      font-size: 24px;
+      color: white;
+      transform: rotate(0deg);
+      transition: transform 0.3s ease;
+      z-index: 1001;
+      
+      &.collapsed {
+        transform: rotate(180deg);
+      }
+    }
+    
+    nav {
+      width: 100%;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      padding-top: 10px;
+      
+      &.expanded {
+        display: flex;
+      }
+      
+      a {
+        font-size: 18px;
+        padding: 5px 0;
+        text-align: left;
+      }
+      
+      .book-now-btn {
+        font-size: 18px;
+        padding: 10px 15px;
+        margin-top: 10px;
+        align-self: center;
+      }
+    }
+  }
+
+  .hero {
+    padding: 120px 0 60px;
+    
+    .overlay {
+      .search-info {
+        h2 {
+          font-size: 24px;
+        }
+        p {
+          font-size: 16px;
+        }
+        .about-btn {
+          padding: 8px 15px;
+          font-size: 16px;
+        }
+      }
+      
+      .search-form {
+        padding: 15px;
+        
+        form {
+          input, button {
+            padding: 12px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .popular-flights {
+    padding: 30px 15px;
+    
+    h3 {
+      font-size: 22px;
+    }
+    
+    .flight-card {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  
+  footer {
+    font-size: 16px;
+    padding: 15px;
+  }
+}

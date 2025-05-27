@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/main.css">
+    <title>SkyWay</title>
+</head>
+<body>
+    <main>
+        <header class="overlay-header">
+            <a href="../HTML/Main.html">
+                <img src="../1.svg" alt="SkyWay Логотип" class="logo">
+            </a>
+            <button class="menu-toggle">
+                <span class="arrow-icon"><img src="../2.svg" alt="Стрелка" class="arrow"></span>
+            </button>
+            <nav>
+                <a href="../HTML/profile.html">Личный кабинет</a>
+                <a href="../HTML/services.html">Услуги</a>
+                <a href="../HTML/about.html">О компании</a>
+                <button onclick="location.href='../HTML/booking.html'" class="book-now-btn">Забронировать сейчас</button>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="overlay">
+                <div class="search-info">
+                    <h2>#WeAreSkyWay</h2>
+                    <p>Узнайте больше про компанию</p>
+                    <button class="about-btn" onclick="location.href='about.html'">О нас</button>
+                </div>
+            
+                <div class="search-form-wrapper">
+                    <div class="search-form">
+                        <form id="main-search-form">
+                            <input type="text" id="from-input" placeholder="Откуда" required>
+                            <input type="text" id="to-input" placeholder="Куда" required>
+                            <input type="date" id="date-input" required>
+                            <button type="submit">Найти</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="popular-flights">
+            <h3>Популярные рейсы</h3>
+            <div class="flights-container" id="flightList">
+            <!-- Карточки будут добавлены динамически из XML -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Контакты: <a href="mailto:info@skyway.com">info@skyway.com</a> | +375 (29) 123-45-67 | Минск, ул. Аэропортовская, 15</p>
+    </footer>
+
+    <script src="../JS/scripts2.js"></script>
+    <script src="../JS/mobile.js"></script>
+</body>
+</html>
